@@ -9,7 +9,7 @@ Sphinxを利用してドキュメントを用意し、GitHub Pagesで公開し�
 ```toml
 [project.optional-dependencies]
 develop = [
-    ...
+    # ...
     "sphinx",
 ]
 ```
@@ -24,3 +24,6 @@ sphinx-quickstart
 
 公開用にビルドの出力先は`docs/`へ。
 `.nojekyll`を追加。
+
+"Settings" > "Pages" > "Branch"で、"main"ブランチの`/docs`を指定して"Save"を押す。
+https://yamaimo.github.io/docs_trial/ で公開された。
