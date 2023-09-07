@@ -24,6 +24,7 @@ develop = [
     "mypy",
     "types-docutils",
     "kumade",
+    "sphinx",
 ]
 
 [tool.setuptools.dynamic]
