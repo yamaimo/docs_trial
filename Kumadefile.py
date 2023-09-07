@@ -13,3 +13,8 @@ def format() -> None:
 @ku.help("Lint code by pysen.")
 def lint() -> None:
     subprocess.run(["pysen", "run", "lint"])
+
+@ku.task("doc")
+@ku.help("Build document.")
+def doc() -> None:
+    subprocess.run(["sphinx-build", "sphinx", "docs"])
