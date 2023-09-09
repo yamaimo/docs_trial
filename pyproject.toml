@@ -25,6 +25,7 @@ develop = [
     "types-docutils",
     "kumade",
     "sphinx",
+    "myst-parser[linkify]",
 ]
 
 [tool.setuptools.dynamic]
