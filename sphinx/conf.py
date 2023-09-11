@@ -3,13 +3,15 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import fibo
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "fibo"
 copyright = "2023, yamaimo"
 author = "yamaimo"
-release = "0.1.0"
+release = fibo.__version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -17,6 +19,7 @@ release = "0.1.0"
 extensions = [
     "sphinx.ext.githubpages",
     "myst_parser",
+    "autodoc2",
 ]
 
 source_suffix = {
@@ -54,3 +57,14 @@ myst_enable_extensions = [
     "html_image",  # img要素をsphinxの内部表現に変換する
     "html_admonition",  # admonitionクラスのdiv要素をsphinxの内部表現に変換する
 ]
+
+
+# Settings for autodoc2
+
+autodoc2_packages = [
+    "../fibo",
+]
+
+autodoc2_render_plugin = "myst"
+
+autodoc2_hidden_objects = ["private", "inherited"]

@@ -3,7 +3,9 @@ Welcome to fibo's documentation!
 
 ```{toctree}
 :maxdepth: 2
-:caption: Contents:
+:caption: Contents
+
+apidocs/index
 ```
 
 Indices and tables
