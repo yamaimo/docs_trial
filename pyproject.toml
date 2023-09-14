@@ -27,6 +27,7 @@ develop = [
     "sphinx",
     "myst-parser[linkify]",
     "sphinx-autodoc2",
+    "furo",
 ]
 
 [tool.setuptools.dynamic]
