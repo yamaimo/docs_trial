@@ -61,6 +61,7 @@ MyST用の設定も`conf.py`に追加する。
 
 ```python
 myst_enable_extensions = [
+    # 詳細はconf.pyを見ること
     ...
 ]
 ```
@@ -81,4 +82,77 @@ directive content
 
 ```
 {role-name}`role content`
+```
+
+## APIリファレンスの自動生成
+
+`pyproject.toml`で`sphinx-autodoc2`パッケージを追加しインストール：
+
+
+```toml
+[project.optional-dependencies]
+develop = [
+    # ...
+    "sphinx-autodoc2",
+]
+```
+
+`conf.py`でautodoc2の拡張を追加：
+
+```python
+# 拡張を追加
+extensions = [
+    # ...
+    "autodoc2",
+]
+```
+
+autodoc2用の設定も`conf.py`に追加する。
+
+```python
+# 自動生成の対象のパッケージを指定
+autodoc2_packages = [
+    "../fibo",
+]
+
+# docstringでMarkdownを使えるようにし、
+# 生成される文書もMarkdownにする
+autodoc2_render_plugin = "myst"
+
+# 自動生成しない対象を指定
+autodoc2_hidden_objects = ["private", "inherited"]
+```
+
+自動生成された文書は`sphinx/apidocs/`以下に出ていた。
+（このパスを変えたい場合、`autodoc2_output_dir`の設定を変える）
+
+あとは生成された文書を目次に追加する必要がある：
+
+<pre>
+```{toctree}
+...
+
+apidocs/index  # これを追加
+```
+</pre>
+
+## テーマの変更
+
+ここではテーマをFuroにしてみる。
+
+`pyproject.toml`で`furo`パッケージを追加しインストール：
+
+```toml
+[project.optional-dependencies]
+develop = [
+    # ...
+    "furo",
+]
+```
+
+`conf.py`でテーマを変更：
+
+```python
+# テーマを変更
+html_theme = "furo"
 ```
