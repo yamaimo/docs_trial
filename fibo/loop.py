@@ -1,4 +1,28 @@
+"""
+This module provides a function to generate a fibonacci number by loop,
+which is derived by tail recursion.
+"""
+
+
 def fibo(n: int) -> int:
+    """
+    Calculate a n-th fibonacci number by tail recursion loop.
+
+    Parameters
+    ----------
+    n : int
+        Specify the n-th.
+
+    Returns
+    -------
+    int
+        The n-th fibonacci number.
+
+    Raises
+    ------
+    AssertionError
+        When non-positive n is specified.
+    """
     assert n > 0
     if n <= 2:
         return 1
