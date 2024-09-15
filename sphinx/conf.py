@@ -19,6 +19,7 @@ release = fibo.__version__
 extensions = [
     "sphinx.ext.githubpages",
     "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
     "myst_parser",
 ]
 
