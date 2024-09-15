@@ -26,6 +26,7 @@ develop = [
     "kumade",
     "sphinx",
     "myst-parser[linkify]",
+    "sphinx-autodoc2",
     "furo",
 ]
 
