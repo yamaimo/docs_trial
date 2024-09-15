@@ -17,6 +17,11 @@ def format() -> None:
 def lint() -> None:
     subprocess.run(["pysen", "run", "lint"])
 
+@ku.task("apidoc")
+@ku.help("Build API document.")
+def doc() -> None:
+    subprocess.run(["sphinx-apidoc", "-f", "-o", str(doc_src), "fibo"])
+
 @ku.task("doc")
 @ku.help("Build document.")
 def doc() -> None:

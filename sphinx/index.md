@@ -5,7 +5,7 @@ Welcome to fibo's documentation!
 :maxdepth: 2
 :caption: Contents
 
-apidocs/index
+modules
 ```
 
 Indices and tables

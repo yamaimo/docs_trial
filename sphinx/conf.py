@@ -18,8 +18,8 @@ release = fibo.__version__
 
 extensions = [
     "sphinx.ext.githubpages",
+    "sphinx.ext.autodoc",
     "myst_parser",
-    "autodoc2",
 ]
 
 source_suffix = {
@@ -57,14 +57,3 @@ myst_enable_extensions = [
     "html_image",  # img要素をsphinxの内部表現に変換する
     "html_admonition",  # admonitionクラスのdiv要素をsphinxの内部表現に変換する
 ]
-
-
-# Settings for autodoc2
-
-autodoc2_packages = [
-    "../fibo",
-]
-
-autodoc2_render_plugin = "myst"
-
-autodoc2_hidden_objects = ["private", "inherited"]
